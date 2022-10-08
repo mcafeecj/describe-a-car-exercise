@@ -1,0 +1,42 @@
+form{
+    h1 {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    mat-select {
+        border: 1px solid rgba(0,0,0,.54);
+        margin-bottom: 1em;
+    }
+
+    .basic-input-control{
+        display:flex;
+        flex-direction: column;
+        margin-bottom: 1em;
+    }
+    
+    .add-car-control-container {
+        overflow: hidden;
+    }
+
+    .mat-dialog-actions{
+        justify-content: flex-end;
+    }
+
+    .cancel-button {
+        background-color: rgba(0,0,0,.54);
+        color: white;
+    }
+
+    .add-button {
+        background-color: #1976d2;
+        color: white;
+    }
+}
+
+
+    
+
+
+

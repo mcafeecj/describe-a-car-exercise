@@ -1,0 +1,55 @@
+<div class="car-list-container">
+
+  <!-- Search Filter && Add Car Button -->
+  <div class="car-list-header">    
+    <div class="search-container">
+      <input class="search-filter" type="search" placeholder="Search..." [formControl]="searchControl">
+    </div>
+    <button mat-flat-button class="add-car-button" (click)="openDialog()"><mat-icon>add</mat-icon><span class="add-a-car">Add a car</span></button>
+  </div>    
+
+  <!-- Car List -->
+  <table mat-table [dataSource]="carsTableData" class="car-list-table mat-elevation-z8">
+    
+      <!-- Make Column -->
+      <ng-container matColumnDef="make">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Make </th>
+        <td mat-cell *matCellDef="let car" (click)="onRowClick(car)"> {{car.make}} </td>
+      </ng-container>
+    
+      <!-- Model Column -->
+      <ng-container matColumnDef="model">
+        <th mat-header-cell *matHeaderCellDef> Model </th>
+        <td mat-cell *matCellDef="let car" (click)="onRowClick(car)"> {{car.model}} </td>
+      </ng-container>
+    
+      <!-- Year Column -->
+      <ng-container matColumnDef="year">
+        <th mat-header-cell *matHeaderCellDef> Year </th>
+        <td mat-cell *matCellDef="let car" (click)="onRowClick(car)"> {{car.year}} </td>
+      </ng-container>
+    
+      <!-- Mileage Column -->
+      <ng-container matColumnDef="mileage">
+        <th mat-header-cell *matHeaderCellDef> Mileage </th>
+        <td mat-cell *matCellDef="let car" (click)="onRowClick(car)"> {{car.mileage.toLocaleString('en')}} </td>
+      </ng-container>
+
+      <!-- ExteriorColor Column -->
+      <ng-container matColumnDef="exteriorColor">
+        <th mat-header-cell *matHeaderCellDef> Exterior Color </th>
+        <td mat-cell *matCellDef="let car" (click)="onRowClick(car)"> {{carColor[car.exteriorColor]}} </td>
+      </ng-container>
+
+      <!-- InteriorColor Column -->
+      <ng-container matColumnDef="interiorColor">
+        <th mat-header-cell *matHeaderCellDef> Interior Color </th>
+        <td mat-cell *matCellDef="let car" (click)="onRowClick(car)"> {{carColor[car.interiorColor]}}</td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+</div>

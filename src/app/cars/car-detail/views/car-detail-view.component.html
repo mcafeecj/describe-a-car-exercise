@@ -1,0 +1,54 @@
+<form [formGroup]="formGroup">
+    <div class="add-car-header">
+        <h1 mat-dialog-title>Add a Car</h1>
+    </div>   
+
+    <div class="add-car-control-container" mat-dialog-content>
+        <!-- Make -->
+        <mat-label>Make</mat-label>
+        <mat-select formControlName="make">
+            <mat-option *ngFor="let make of makes" [value]="make">
+                {{make}}
+            </mat-option>
+        </mat-select>
+
+        <!-- Model -->
+        <div class="basic-input-control">
+            <mat-label>Model</mat-label>
+            <input matInput formControlName="model" type="text">
+        </div>
+
+        <!-- Year -->
+        <div class="basic-input-control">
+            <mat-label>Year</mat-label>
+            <input matInput formControlName="year" type="number">
+        </div>
+
+        <!-- Mileage -->
+        <div class="basic-input-control">
+            <mat-label>Mileage</mat-label>
+            <input matInput formControlName="mileage" type="number">
+        </div>
+
+        <!-- Exterior Color -->
+        <mat-label>Exterior Color</mat-label>
+        <mat-select formControlName="exteriorColor" required>
+            <mat-option *ngFor="let color of exteriorColors;" [value]="color">
+                {{carColors[color]}}
+            </mat-option>
+        </mat-select>
+        
+        <!-- Interior Color -->
+        <mat-label>Interior Color</mat-label>
+        <mat-select formControlName="interiorColor" required>
+            <mat-option *ngFor="let color of interiorColors" [value]="color">
+                {{carColors[color]}}
+            </mat-option>
+        </mat-select>
+    </div>
+
+    <div mat-dialog-actions class="footer-buttons">
+        <button mat-button class="cancel-button" (click)="onCancel()">Cancel</button>
+        <button mat-button class="add-button" [mat-dialog-close]="formGroup" cdkFocusInitial>Add</button>
+    </div>
+</form>
