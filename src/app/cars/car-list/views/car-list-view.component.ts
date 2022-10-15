@@ -52,10 +52,10 @@ export class CarListViewComponent implements OnDestroy {
    }
 
    private filterTable(){
-      const searchString: string = this.searchControl.value;
+      const searchString: string = this.searchControl.value.toLowerCase();
 
       this.carsTableData = this._cars
-         .filter((t) => t.make.toLowerCase().includes(searchString.toLowerCase()))
+         .filter((t) => t.make.toLowerCase().includes(searchString))
          .map((t) => new CarListTableModel(t));
 
       this.carsTableData = this._cars.filter((car) => {
