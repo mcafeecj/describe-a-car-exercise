@@ -52,12 +52,9 @@ export class CarListViewComponent implements OnDestroy {
    }
 
    private filterTable(){
-      const searchString: string = this.searchControl.value.toLowerCase();
+      const searchString: string = this.searchControl.value.toLowerCase();      
 
-      this.carsTableData = this._cars
-         .filter((t) => t.make.toLowerCase().includes(searchString))
-         .map((t) => new CarListTableModel(t));
-
+      //checks search string against each column
       this.carsTableData = this._cars.filter((car) => {
          return (
             car.make.toLowerCase().indexOf(searchString) !==
@@ -75,8 +72,6 @@ export class CarListViewComponent implements OnDestroy {
             CarColor[car.interiorColor].toString().toLowerCase().indexOf(searchString) !==
                -1
          );
-      });
-
-      this.carsTableData = this.carsTableData.map((car)=> new CarListTableModel(car));
+      }).map((car)=> new CarListTableModel(car));
    }
 }
