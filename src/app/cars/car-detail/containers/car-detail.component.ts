@@ -4,7 +4,7 @@ import { CarDetailService } from "../services/car-detail.service";
 
 
 @Component({
-   selector: "rmx-car-detail",
+   selector: "app-car-detail",
    templateUrl: "car-detail.component.html",
    viewProviders: [CarDetailService],
 })

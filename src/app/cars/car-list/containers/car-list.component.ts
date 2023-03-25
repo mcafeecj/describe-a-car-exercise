@@ -1,12 +1,11 @@
 import { Component, OnDestroy } from "@angular/core";
 import { Observable, Subject } from "rxjs";
-import { CarListTableModel } from "../models/car-list-table.model";
 import { CarModel } from "../models/car-model";
 import { CarListService } from "../services/car-list.service";
 
 
 @Component({
-   selector: "rmx-car-list",
+   selector: "app-car-list",
    templateUrl: "car-list.component.html",
    viewProviders: [CarListService],
 })
