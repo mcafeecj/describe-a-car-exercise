@@ -51,5 +51,8 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
+  <div *ngIf="!carsTableData.length" class="no-table-data">
+    <p>There is no data to be displayed.</p>
+  </div>
 
 </div>

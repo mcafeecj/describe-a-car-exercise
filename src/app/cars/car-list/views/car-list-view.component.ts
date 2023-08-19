@@ -18,7 +18,7 @@ export class CarListViewComponent implements OnDestroy {
          this.filterTable();
       }
    }
-
+   
    @Output() openDialogClicked = new EventEmitter();
 
    displayedColumns: string[] = ['make', 'model', 'year', 'mileage', 'exteriorColor', 'interiorColor'];

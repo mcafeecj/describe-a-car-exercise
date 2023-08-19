@@ -3,7 +3,6 @@ import { MatDialog } from "@angular/material/dialog";
 import { BehaviorSubject, Observable, Subject } from "rxjs";
 import { CarDetailComponent } from "../../car-detail/containers/car-detail.component";
 import { CarColor } from "../models/car-color.enum";
-import { CarListTableModel } from "../models/car-list-table.model";
 import { CarModel } from "../models/car-model";
 
 @Injectable()
@@ -33,18 +32,21 @@ export class CarListService implements OnDestroy {
          const currentCars = this._cars.value;
          const carIDs = currentCars.map((car)=>car.carId);
 
-         const newCar: CarModel = result.value;
+         const newCar: CarModel = result ? result.value : null;
 
-         const carToAdd = new CarModel();
-         carToAdd.carId = Math.max(...carIDs) + 1;
-         carToAdd.make = newCar.make;
-         carToAdd.model = newCar.model;
-         carToAdd.year = newCar.year;
-         carToAdd.mileage = newCar.mileage;
-         carToAdd.exteriorColor = newCar.exteriorColor;
-         carToAdd.interiorColor = newCar.interiorColor;
+         if (newCar) {
+            const carToAdd = new CarModel();
+            carToAdd.carId = Math.max(...carIDs) + 1;
+            carToAdd.make = newCar.make;
+            carToAdd.model = newCar.model;
+            carToAdd.year = newCar.year;
+            carToAdd.mileage = newCar.mileage;
+            carToAdd.exteriorColor = newCar.exteriorColor;
+            carToAdd.interiorColor = newCar.interiorColor;
+   
+            currentCars.push(carToAdd);
+         }
 
-         currentCars.push(carToAdd);
          this._cars.next([...currentCars]);
       });
    }

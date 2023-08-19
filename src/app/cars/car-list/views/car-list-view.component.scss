@@ -21,7 +21,7 @@
         }
 
         tr.mat-row {
-            background-color: #f0f7ff;
+            background-color: #fff0f9;
             cursor: pointer;
         }
 
@@ -56,5 +56,12 @@
 
     span.add-a-car {
         line-height: .5em;
+        padding-right: .4em;
+    }
+
+    .no-table-data {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
     }
 }
