@@ -11,7 +11,7 @@ export class CarListService implements OnDestroy {
 
    private _cars = new BehaviorSubject<Array<CarModel>>([]);
 
-   private unsubscribe = new Subject<void>();
+   private _unsubscribe = new Subject<void>();
 
    constructor(private dialog: MatDialog) {
       this.cars = this._cars.asObservable();
@@ -19,7 +19,7 @@ export class CarListService implements OnDestroy {
    }
 
    ngOnDestroy(): void {
-      this.unsubscribe.next();
+      this._unsubscribe.next();
    }
 
    openDialog(){

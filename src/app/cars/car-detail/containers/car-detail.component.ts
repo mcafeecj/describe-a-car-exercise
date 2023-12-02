@@ -10,13 +10,13 @@ import { CarDetailService } from "../services/car-detail.service";
 })
 export class CarDetailComponent implements OnDestroy {
 
-   private unsubscribe = new Subject<void>();
+   private _unsubscribe = new Subject<void>();
 
    constructor(private carDetailService: CarDetailService) {
 
    }
 
    ngOnDestroy() {
-      this.unsubscribe.next();
+      this._unsubscribe.next();
    }
 }

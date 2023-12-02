@@ -31,16 +31,16 @@ export class CarListViewComponent implements OnDestroy {
 
    private _cars: Array<CarModel> = [];
 
-   private unsubscribe = new Subject<void>();
+   private _unsubscribe = new Subject<void>();
 
    constructor() {
-      this.searchControl.valueChanges.pipe(debounceTime(100), takeUntil(this.unsubscribe)).subscribe(() => {
+      this.searchControl.valueChanges.pipe(debounceTime(100), takeUntil(this._unsubscribe)).subscribe(() => {
          this.filterTable();
       });
    }
 
    ngOnDestroy() {
-      this.unsubscribe.next();
+      this._unsubscribe.next();
    }
 
    openDialog(){

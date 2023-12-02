@@ -12,14 +12,14 @@ import { CarListService } from "../services/car-list.service";
 export class CarListComponent implements OnDestroy {
    cars: Observable<Array<CarModel>>;
 
-   private unsubscribe = new Subject<void>();
+   private _unsubscribe = new Subject<void>();
 
    constructor(private carListService: CarListService) {
       this.cars = this.carListService.cars;
    }
 
    ngOnDestroy() {
-      this.unsubscribe.next();
+      this._unsubscribe.next();
    }
 
    openDialog(){
