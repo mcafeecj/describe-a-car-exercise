@@ -1,15 +1,15 @@
-import { Component, EventEmitter, Input, OnDestroy, Output } from "@angular/core";
+import { Component, OnDestroy } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { MatLegacyDialogRef as MatDialogRef } from "@angular/material/legacy-dialog";
 import { Subject  } from "rxjs";
 import { CarColor } from "../../car-list/models/car-color.enum";
 import { CarDetailComponent } from "../containers/car-detail.component";
 import { CarDetailForm } from "../models/car-detail-form.model";
+import { MatDialogRef } from "@angular/material/dialog";
 
 @Component({
-   selector: "app-car-detail-view",
-   templateUrl: "car-detail-view.component.html",
-   styleUrls: ["car-detail-view.component.scss"],
+  selector: "app-car-detail-view",
+  templateUrl: "car-detail-view.component.html",
+  styleUrls: ["car-detail-view.component.scss"],
 })
 export class CarDetailViewComponent implements OnDestroy {
 

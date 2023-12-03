@@ -1,6 +1,8 @@
 import { FormControl, FormGroup } from "@angular/forms";
 
+
 type CarFormData = {
+  make: string,
   model: string;
   year: number;
   mileage: number;
@@ -16,12 +18,12 @@ export class CarDetailForm {
   exteriorColor: FormControl = new FormControl();
   interiorColor: FormControl = new FormControl();
 
-  formGroup: FormGroup<CarFormData> = new FormGroup<CarFormData>({
+  formGroup: FormGroup = new FormGroup({
     make: this.make,
     model: this.model,
     year: this.year,
     mileage: this.mileage,
     exteriorColor: this.exteriorColor,
     interiorColor: this.interiorColor,
-  });
+  } as { [key in keyof CarFormData]: FormControl });
 }
