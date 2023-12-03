@@ -1,19 +1,21 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
-import { MatLegacyDialogModule as MatDialogModule} from '@angular/material/legacy-dialog'
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input'
-import { MatIconModule } from '@angular/material/icon'
-import { MatLegacyButtonModule as MatButtonModule } from "@angular/material/legacy-button";
-
+import { MatIcon, MatIconModule } from '@angular/material/icon'
+import { MatTableModule } from '@angular/material/table'
+ 
 import { ReactiveFormsModule } from "@angular/forms";
 import { CarDetailViewComponent } from "./views/car-detail-view.component";
 import { CarDetailComponent } from "./containers/car-detail.component";
 import { MatLegacyOptionModule as MatOptionModule } from "@angular/material/legacy-core";
 import { MatLegacySelectModule as MatSelectModule } from "@angular/material/legacy-select";
+import { MatDialog } from "@angular/material/dialog";
+import { MatInput } from "@angular/material/input";
+import { MatButton } from "@angular/material/button";
+import { MatOption } from "@angular/material/core";
+import { MatSelect } from "@angular/material/select";
 
 @NgModule({
-   imports: [CommonModule, MatTableModule, MatDialogModule, ReactiveFormsModule, MatInputModule, MatIconModule, MatButtonModule, MatOptionModule, MatSelectModule, ReactiveFormsModule],
+   imports: [CommonModule, MatTableModule, MatDialog, ReactiveFormsModule, MatInput, MatIcon, MatButton, MatOption, MatSelect, ReactiveFormsModule],
    declarations: [CarDetailComponent, CarDetailViewComponent],
    exports: [CarDetailComponent, CarDetailViewComponent],
 })
