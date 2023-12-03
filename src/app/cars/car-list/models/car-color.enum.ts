@@ -1,3 +1,5 @@
+// car-color.enum.ts
+
 export enum CarColor {
     Black = 1,
     White = 2,
@@ -10,4 +12,13 @@ export enum CarColor {
     Purple = 9,
     Pink = 10,
     Gold = 11,
- }
+}
+
+export const carColorArray: string[] = getEnumValues(CarColor);
+
+// Helper function to get enum values
+function getEnumValues<T>(enumObject: T): string[] {
+    return Object.values(enumObject)
+        .filter(value => typeof value === 'number')
+        .map(value => value.toString());
+}

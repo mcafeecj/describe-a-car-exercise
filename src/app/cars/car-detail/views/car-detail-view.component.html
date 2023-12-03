@@ -33,18 +33,19 @@
         <!-- Exterior Color -->
         <mat-label>Exterior Color</mat-label>
         <mat-select formControlName="exteriorColor" required>
-            <mat-option *ngFor="let color of exteriorColors;" [value]="color">
-                {{carColors[color]}}
+            <mat-option *ngFor="let color of exteriorColors" [value]="color">
+                {{ carColors[color] }}
             </mat-option>
         </mat-select>
-        
+
         <!-- Interior Color -->
         <mat-label>Interior Color</mat-label>
         <mat-select formControlName="interiorColor" required>
             <mat-option *ngFor="let color of interiorColors" [value]="color">
-                {{carColors[color]}}
+                {{ carColors[color] }}
             </mat-option>
         </mat-select>
+
     </div>
 
     <div mat-dialog-actions class="footer-buttons">

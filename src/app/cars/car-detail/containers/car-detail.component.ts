@@ -18,5 +18,6 @@ export class CarDetailComponent implements OnDestroy {
 
    ngOnDestroy() {
       this._unsubscribe.next();
+      this._unsubscribe.complete();
    }
 }

@@ -8,11 +8,12 @@ import { Subject } from "rxjs";
 })
 export class LandingPageComponent implements OnDestroy {
 
-   private unsubscribe = new Subject<void>();
+   private _unsubscribe = new Subject<void>();
 
    constructor() {}
 
    ngOnDestroy() {
-      this.unsubscribe.next();
+      this._unsubscribe.next();
+      this._unsubscribe.complete();
    }
 }

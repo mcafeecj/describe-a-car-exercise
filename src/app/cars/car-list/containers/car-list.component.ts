@@ -20,6 +20,7 @@ export class CarListComponent implements OnDestroy {
 
    ngOnDestroy() {
       this._unsubscribe.next();
+      this._unsubscribe.complete();
    }
 
    openDialog(){
