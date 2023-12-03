@@ -1,13 +1,11 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { MatIcon, MatIconModule } from '@angular/material/icon'
+import { MatIcon } from '@angular/material/icon'
 import { MatTableModule } from '@angular/material/table'
  
 import { ReactiveFormsModule } from "@angular/forms";
 import { CarDetailViewComponent } from "./views/car-detail-view.component";
 import { CarDetailComponent } from "./containers/car-detail.component";
-import { MatLegacyOptionModule as MatOptionModule } from "@angular/material/legacy-core";
-import { MatLegacySelectModule as MatSelectModule } from "@angular/material/legacy-select";
 import { MatDialog } from "@angular/material/dialog";
 import { MatInput } from "@angular/material/input";
 import { MatButton } from "@angular/material/button";
