@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
+import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
 import { BehaviorSubject, Observable, Subject } from "rxjs";
 import { CarDetailComponent } from "../../car-detail/containers/car-detail.component";
 import { CarColor } from "../models/car-color.enum";
