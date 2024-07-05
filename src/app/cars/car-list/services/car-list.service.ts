@@ -42,8 +42,8 @@ export class CarListService implements OnDestroy {
             carToAdd.model = newCar.model;
             carToAdd.year = newCar.year;
             carToAdd.mileage = newCar.mileage;
-            carToAdd.exteriorColor = newCar.exteriorColor;
-            carToAdd.interiorColor = newCar.interiorColor;
+            carToAdd.exteriorColor = this.getCarColor(newCar.exteriorColor);
+            carToAdd.interiorColor = this.getCarColor(newCar.interiorColor);
    
             currentCars.push(carToAdd);
          }
@@ -51,6 +51,10 @@ export class CarListService implements OnDestroy {
          this._cars.next([...currentCars]);
       });
    }
+
+   private getCarColor(color: any): CarColor | undefined {
+      return CarColor[color as keyof typeof CarColor];
+  }
    
    private getCars() {
       const cars = new Array<CarModel>();
