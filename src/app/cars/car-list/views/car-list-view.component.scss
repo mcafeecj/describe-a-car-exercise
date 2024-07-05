@@ -11,21 +11,22 @@
     }
 
     .car-list-table {
+        min-width: 0;
         margin: 10px 20px 0 20px;
         border: 1px solid rgba(0,0,0,.54);
 
-        tr.mat-header-row th{
-            font-size: large;
+        tr.mat-mdc-header-row th{
+            font-size: medium;
             color: white;
             background-color: #1976d2;
         }
 
-        tr.mat-row {
-            background-color: #fff0f9;
+        tr.mat-mdc-row {
+            background-color: #f0f0ff;
             cursor: pointer;
         }
 
-        tr.mat-row:hover {
+        tr.mat-mdc-row:hover {
             background-color: rgb(188, 219, 255);
         }
     }
@@ -51,7 +52,7 @@
     }
 
     button.add-car-button:hover {
-        background-color: #f0f7ff;
+        background-color: rgb(188, 219, 255);
     }
 
     span.add-a-car {
